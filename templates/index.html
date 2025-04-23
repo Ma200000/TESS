@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>HTDTNTN - Web Game</title>
+    <style>
+        body { font-family: monospace; background: #111; color: #0f0; padding: 1em; }
+        a { color: #0ff; margin-right: 1em; }
+        .log-box { background: #222; padding: 1em; margin-top: 1em; height: 300px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h2>Hệ Thống Đa Thứ Nguyên</h2>
+    <p><b>{{ player.name }}</b> | Rank: {{ player.rank.name }} | Điểm xuyên: {{ player.travel_points }} | Mảnh: {{ player.system_shards }} | Hệ thống cấp: {{ player.system_level }}</p>
+    <p>
+        <a href="/action/gacha">Gacha</a>
+        <a href="/action/quest">Nhiệm vụ</a>
+        <a href="/action/travel">Xuyên Không</a>
+        <a href="/action/shard">Nhặt Mảnh</a>
+        <a href="/action/upgrade">Nâng Hệ Thống</a>
+    </p>
+    <div class="log-box">
+        {% for line in log %}
+            <div>{{ line }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>
